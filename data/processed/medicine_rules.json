@@ -1,0 +1,44 @@
+{
+  "_description": "Forward-chaining safety rules used by rule_engine.py",
+  "high_risk_rules": [
+    {"id": "RULE_CONTRAINDICATED",  "trigger": "contraindicated",    "reason": "FDA label states this drug/combination is CONTRAINDICATED."},
+    {"id": "RULE_FATAL",            "trigger": "fatal",              "reason": "FDA label warns of FATAL outcomes."},
+    {"id": "RULE_DEATH",            "trigger": "death",              "reason": "FDA label warns of risk of DEATH."},
+    {"id": "RULE_LIFE_THREATENING", "trigger": "life-threatening",   "reason": "FDA label flags a LIFE-THREATENING risk."},
+    {"id": "RULE_SEROTONIN_SYN",    "trigger": "serotonin syndrome", "reason": "SEROTONIN SYNDROME risk detected in retrieved FDA label."},
+    {"id": "RULE_ANAPHYLAXIS",      "trigger": "anaphylaxis",        "reason": "Risk of ANAPHYLAXIS noted in retrieved FDA label."},
+    {"id": "RULE_DO_NOT_USE",       "trigger": "do not use",         "reason": "FDA label explicitly states DO NOT USE."},
+    {"id": "RULE_NOT_RECOMMENDED",  "trigger": "not recommended",    "reason": "FDA label marks this as NOT RECOMMENDED."},
+    {"id": "RULE_LIVER_FAILURE",    "trigger": "liver failure",      "reason": "FDA label warns of LIVER FAILURE risk."},
+    {"id": "RULE_RENAL_FAILURE",    "trigger": "renal failure",      "reason": "FDA label warns of RENAL FAILURE risk."},
+    {"id": "RULE_SEIZURE",          "trigger": "seizure",            "reason": "FDA label warns of SEIZURE risk."},
+    {"id": "RULE_RHABDO",           "trigger": "rhabdomyolysis",     "reason": "FDA label warns of RHABDOMYOLYSIS risk."},
+    {"id": "RULE_HYPERSENSITIVITY", "trigger": "hypersensitivity",   "reason": "FDA label reports HYPERSENSITIVITY reactions."}
+  ],
+  "moderate_risk_rules": [
+    {"id": "RULE_CAUTION",    "trigger": "caution",          "reason": "FDA label advises CAUTION."},
+    {"id": "RULE_MONITOR",    "trigger": "monitor",          "reason": "FDA label recommends MONITORING."},
+    {"id": "RULE_AVOID",      "trigger": "avoid",            "reason": "FDA label recommends AVOIDING this combination."},
+    {"id": "RULE_ASK_DOCTOR", "trigger": "ask a doctor",     "reason": "FDA label advises consulting a DOCTOR."},
+    {"id": "RULE_CONSULT",    "trigger": "consult",          "reason": "FDA label recommends professional CONSULTATION."},
+    {"id": "RULE_ADV_REACT",  "trigger": "adverse reaction", "reason": "Significant ADVERSE REACTIONS reported."},
+    {"id": "RULE_CAUTION2",   "trigger": "use caution",      "reason": "FDA label explicitly says USE CAUTION."}
+  ],
+  "context_aware_rules": [
+    {"id": "RULE_GERIATRIC_AGE",   "trigger": "age >= 65 AND geriatric in text",  "reason": "Patient age ≥ 65 with geriatric warnings."},
+    {"id": "RULE_PEDIATRIC_AGE",   "trigger": "age < 12 AND pediatric in text",   "reason": "Patient age < 12 with pediatric warnings."},
+    {"id": "RULE_FOOD_INTERACTION","trigger": "food word in interaction text",     "reason": "Food/drink mentioned in FDA interaction section."},
+    {"id": "RULE_ALLERGY_RISK",    "trigger": "allergy word in warning text",      "reason": "Known allergy mentioned in FDA warning/contraindication."},
+    {"id": "RULE_M2_EXPLICIT",     "trigger": "medicine_2 name in retrieved text", "reason": "Medicine 2 explicitly mentioned in FDA label — documented interaction."}
+  ],
+  "risk_score_thresholds": {
+    "High":     ">= 0.55",
+    "Moderate": ">= 0.30",
+    "Low":      "<  0.30"
+  },
+  "keyword_weights": {
+    "high_risk_keyword": 2,
+    "moderate_keyword":  1,
+    "max_possible_score": 43
+  }
+}

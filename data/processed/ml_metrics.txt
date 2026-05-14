@@ -1,0 +1,39 @@
+MediGuard — Random Forest Classifier Metrics
+==================================================
+
+Dataset        : D:\drug-labels\drug-labels\MediGuard_Project\data\processed\mediguard_ml_dataset.csv
+Total records  : 242,198
+Train / Test   : 169,538 / 72,660  (70 / 30 split)
+Features       : ['has_contraindications', 'has_warnings', 'has_precautions', 'has_drug_interactions', 'has_adverse_reactions', 'has_pediatric_warning', 'has_geriatric_warning', 'has_pregnancy_warning', 'has_overdosage_info', 'serious_keyword_count', 'risk_score']
+
+Accuracy       : 1.0000
+
+Classification Report:
+              precision    recall  f1-score   support
+
+        High       1.00      1.00      1.00     10212
+         Low       1.00      1.00      1.00     50655
+    Moderate       1.00      1.00      1.00     11793
+
+    accuracy                           1.00     72660
+   macro avg       1.00      1.00      1.00     72660
+weighted avg       1.00      1.00      1.00     72660
+
+Confusion Matrix  (rows = actual, cols = predicted)
+Labels: Low, Moderate, High
+[[50655     0     0]
+ [    0 11793     0]
+ [    0     0 10212]]
+
+Feature Importances:
+risk_score               0.456061
+serious_keyword_count    0.259636
+has_adverse_reactions    0.095344
+has_contraindications    0.077628
+has_overdosage_info      0.052323
+has_drug_interactions    0.020141
+has_pediatric_warning    0.011519
+has_pregnancy_warning    0.011322
+has_geriatric_warning    0.008497
+has_precautions          0.006496
+has_warnings             0.001032

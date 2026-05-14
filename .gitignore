@@ -1,0 +1,25 @@
+# Python environments
+.venv/
+venv/
+env/
+mediguard-env/
+__pycache__/
+*.py[cod]
+
+# Streamlit / local runtime
+.streamlit/secrets.toml
+
+# Large raw data and generated artifacts
+data/raw_json/
+drug-label-*.json
+data/processed/drug_knowledge.csv
+data/processed/mediguard_ml_dataset.csv
+vector_db/
+*.rar
+*.zip
+*.7z
+
+# Local/system files
+.DS_Store
+Thumbs.db
+.env
