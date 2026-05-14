@@ -181,10 +181,10 @@ MediGuard-AI-Drug-Label-Safety-Agent/
   app.py
   README.md
   requirements.txt
+  LICENSE
+  .gitignore
   data/
     processed/
-      drug_knowledge.csv
-      mediguard_ml_dataset.csv
       medicine_rules.json
       ml_metrics.txt
   models/
@@ -197,6 +197,20 @@ MediGuard-AI-Drug-Label-Safety-Agent/
     train_ml_model.py
     decision_manager.py
     explanation_generator.py
+```
+
+Generated or owner-provided artifact layout after setup:
+
+```text
+MediGuard-AI-Drug-Label-Safety-Agent/
+  data/
+    raw_json/
+      drug-label-0001-of-0013.json
+      ...
+      drug-label-0013-of-0013.json
+    processed/
+      drug_knowledge.csv
+      mediguard_ml_dataset.csv
   vector_db/
     chroma_db/
       chroma.sqlite3
